@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice - 4</title>
+  <script src="assets/js/jquery-3.2.1.js"></script>
+</head>
+<body>
+  <form>
+    <label for="lastname">lastname : </label><input type="text" name="lastname" id="lastname"/>
+    <label for="firstname">firstname : </label><input type="text" name="firstname" id="firstname"/>
+    <label for="dateBirth">Date of birth : </label><input type="text" name="dateBirth" id="dateBirth"/>
+    <label for="placeBirth">Place of birth : </label><input type="text" name="placeBirth" id="placeBirth"/>
+    <label for="job">Job : </label><input type="text" name="job" id="job"/>
+    <label for="society">Society : </label><input type="text" name="society" id="society"/>
+    <button type="button" name="button" id="generate">Générer</button>
+  </form>
+</body>
+<script>
+// Détecte si le bouton ayant l'id generate est activé
+$('#generate').click(function(){
+  // Déclaration des variables contenants les regex
+  var nameRegex = /^[a-zA-Z\'\-éàèîêâàô]+$/;
+  var dateBirthRegex = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]([1][9][0-9]{2}|[2][0][0-9]{2})$/;
+  var placeBirthRegex = /^[a-zA-Z\'\-\/éàèîêâàô]+$/;
+  var societyRegex = /^[a-zA-Z\'\-éàèîêâàô]+$/;
+
+  // Vérifie si les caractères entrés sont valides
+  if(nameRegex.test($('#lastname').val()) == true) {
+    // change la couleur du background en vert si valides
+    $('#lastname').css('background-color', 'rgba(0,200,0,0.25)');
+  }
+  else {
+    // change la couleur du background en rouge si invalides
+    $('#lastname').css('background-color', 'rgba(200,0,0,0.25)');
+  }
+  // Vérifie si les caractères entrés sont valides
+  if(nameRegex.test($('#firstname').val()) == true) {
+    // change la couleur du background en vert si valides
+    $('#firstname').css('background-color', 'rgba(0,200,0,0.25)');
+  }
+  else {
+    // change la couleur du background en rouge si invalides
+    $('#firstname').css('background-color', 'rgba(200,0,0,0.25)');
+  }
+  // Vérifie si les caractères entrés sont valides
+  if(dateBirthRegex.test($('#dateBirth').val()) == true) {
+    // change la couleur du background en vert si valides
+    $('#dateBirth').css('background-color', 'rgba(0,200,0,0.25)');
+  }
+  else {
+    // change la couleur du background en rouge si invalides
+    $('#dateBirth').css('background-color', 'rgba(200,0,0,0.25)');
+  }
+  // Vérifie si les caractères entrés sont valides
+  if(placeBirthRegex.test($('#placeBirth').val()) == true) {
+    // change la couleur du background en vert si valides
+    $('#placeBirth').css('background-color', 'rgba(0,200,0,0.25)');
+  }
+  else {
+    // change la couleur du background en rouge si invalides
+    $('#placeBirth').css('background-color', 'rgba(200,0,0,0.25)');
+  }
+  // Vérifie si les caractères entrés sont valides
+  if(nameRegex.test($('#job').val()) == true) {
+    // change la couleur du background en vert si valides
+    $('#job').css('background-color', 'rgba(0,200,0,0.25)');
+  }
+  else {
+    // change la couleur du background en rouge si invalides
+    $('#job').css('background-color', 'rgba(200,0,0,0.25)');
+  }
+  // Vérifie si les caractères entrés sont valides
+  if(societyRegex.test($('#society').val()) == true) {
+    // change la couleur du background en vert si valides
+    $('#society').css('background-color', 'rgba(0,200,0,0.25)');
+  }
+  else {
+    // change la couleur du background en rouge si invalides
+    $('#society').css('background-color', 'rgba(200,0,0,0.25)');
+  }
+    if(nameRegex.test($('#lastname').val()) == true && nameRegex.test($('#firstname').val()) == true && dateBirthRegex.test($('#dateBirth').val()) == true && placeBirthRegex.test($('#placeBirth').val()) == true && nameRegex.test($('#job').val()) == true && societyRegex.test($('#society').val()) == true) {
+      // Affiche le message si tous les inputs sont valides
+      alert($('#lastname').val() + ' ' + $('#firstname').val() + ', ' + 'né le ' + $('#dateBirth').val() + ' à ' + $('#placeBirth').val() + ', ' + 'actuellement ' + $('#job').val() + ' à ' + $('#society').val());
+    }
+});
+</script>
+</html>
